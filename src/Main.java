@@ -31,7 +31,7 @@ public class Main {
         System.out.printf("\n\n");
         System.out.println("0. Fin");
         System.out.println("1. ArrayList");
-
+        System.out.println("2. Map");
         System.out.print("Elija opcion: ");
 
 
@@ -50,6 +50,9 @@ public class Main {
                 new aisdArrayList();  // Se ejecutará el constructor
                 break;
 
+            case 2:
+                new aisdMap();  // Se ejecutará el constructor
+                break;
 
             default:
                 System.out.println("Opción incorrecta. Pulse enter para continuar.");

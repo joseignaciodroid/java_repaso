@@ -57,10 +57,10 @@ public class aisdArrayList {
         personas = new ArrayList<Persona>();
 
         // Añadimos 4 personas:
-        personas.add(new Persona("Juan", 25, "650-111-111"));
-        personas.add(new Persona("Ana", 26, "650-222-222"));
-        personas.add(new Persona("Eva", 27, "650-333-333"));
-        personas.add(new Persona("Lucas", 28, "650-444-444"));
+        personas.add(new Persona("111A","Juan", 25, "650-111-111"));
+        personas.add(new Persona("222B", "Ana", 26, "650-222-222"));
+        personas.add(new Persona("333C","Eva", 27, "650-333-333"));
+        personas.add(new Persona("444D","Lucas", 28, "650-444-444"));
 
 
         // Mostramos los datos de Ana cuyo indice es 1:
@@ -75,7 +75,7 @@ public class aisdArrayList {
 
 
         // Modicamos el 2ª elemento del ArrayList personas (índice 1, Ana) con datos nuevos:
-        Persona otraPersona = new Persona ("Franc", 30, "650-555- 555");
+        Persona otraPersona = new Persona ("555E", "Franc", 30, "650-555- 555");
         personas.set(1, otraPersona);
 
         // Si sólo quisiéramos modificar uno de los atributos de una Persona utilizaríamos
