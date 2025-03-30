@@ -1,14 +1,30 @@
 import java.util.ArrayList;
 
-import java.util.Comparator;    // para ordenar el ArrayList personas.
+
+// Para ordenar el ArrayList personas,
+//      cuyos elementos son objetos complejos con varios atributos: nombre, edad, telefono.
+//      Permite ordenar atendiendo a varias claves.
+import java.util.Comparator;
+
+
+
+
+// Para ordenar con clases que implementan la interfaz Comparable,
+//      como las clases wrapper (envoltorio) Integer, Double, String, etc.
+//      que tienen un orden natural predefinido.
+import java.util.Collections;
+import java.util.Random;
 
 
 public class aisdArrayList {
 
 
     // Declaramos el ArrayList para objetos Persona que sí vamos a usar en esta clase.
-    public ArrayList <Persona> personas;
+    private ArrayList <Persona> personas;
 
+    // También declaramos este ArrayList para que veas cómo podemos ordenarlos
+    //      de una forma diferente a cuando el ArrayList tiene objetos Persona.
+    private ArrayList <Integer> nrosEnteros;
 
 
 
@@ -71,7 +87,7 @@ public class aisdArrayList {
 
         // Ordenamos por nombre y mostramos:
                 System.out.printf("\n\n Personas ordenadas por nombre \n");
-        personas.sort(Comparator.comparing((Persona::getNombre)));
+        personas.sort(Comparator.comparing(Persona::getNombre));
         listarPersonas_for_normal();
 
 
@@ -80,6 +96,31 @@ public class aisdArrayList {
                 System.out.printf("\n\n Personas ordenadas por edad \n");
         personas.sort(Comparator.comparing((Persona::getEdad)));
         listarPersonas_for_each();
+
+
+
+
+
+        // El resto: trabajamos con un ArrayList de algún tipo primitivo
+        //      como los int, por ejemplo, en lugar de ser cada elemento un Objeto.
+        nrosEnteros = new ArrayList<Integer>();  // Integer es la clase wrapper (envoltorio) para tipos primitivos int.
+
+        Random random = new Random();
+        for (int i=0; i < 5; i++){        // Añadimos 5 enteros entre 0 y 10.
+            nrosEnteros.add( random.nextInt(11));
+        }
+
+        // Sustituimos el elemento random de posición 3 por el valor 55555.
+        nrosEnteros.set(3, 55555);
+        
+
+        // Ordenamos el ArrayList de números enteros.
+        // En lugar de usar la clase Comparator que es útil para objetos complejos
+        //      como Persona que tienen varios atributos (nombre, edad, telefono)
+        // usaremos Collections que es útil para ordenar tipos primitivos.
+        Collections.sort(nrosEnteros);
+
+
 
 
     }  // constructor
