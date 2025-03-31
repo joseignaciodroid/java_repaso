@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import java.util.ArrayList;
 
 
@@ -54,7 +56,7 @@ public class aisdArrayList {
 
 
         // Creamos el ArrayList declarado arriba a nivel de clase.
-        personas = new ArrayList<Persona>();
+        personas = new ArrayList<>();
 
         // Añadimos 4 personas:
         personas.add(new Persona("111A","Juan", 25, "650-111-111"));
@@ -97,6 +99,11 @@ public class aisdArrayList {
         personas.sort(Comparator.comparing((Persona::getEdad)));
         listarPersonas_for_each();
 
+
+        //Se piden datos desde teclado y se añaden.
+        addPersonaFromKeyboard();
+        // Hacemos otro listado para comprobar que se han añadido correctamente:
+        listarPersonas_for_normal();
 
 
 
@@ -155,6 +162,30 @@ public class aisdArrayList {
     }
 
 
+
+    public void addPersonaFromKeyboard(){
+        // Pedir datos desde teclado y añadirlos al ArrayList personas.
+
+        System.out.printf("\n\n\nRegistraremos nuevos datos desde teclado:\n");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Dime el dni de la persona: ");
+        String dni = sc.nextLine();
+
+        System.out.println("Dime el nombre de la persona: ");
+        String nombre = sc.nextLine();
+
+        System.out.println("Dime la edad de la persona: ");
+        int edad = sc.nextInt(); sc.nextLine();
+
+        System.out.println("Dime el teléfono de la persona: ");
+        String telefono = sc.nextLine();
+
+        personas.add(new Persona(dni,nombre,edad,telefono));
+
+
+    }
 
 
 }  // class
